@@ -1,9 +1,9 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
 #include <ctype.h>
+#include <stdio.h>
 #include <cmath>
 #include <cstdlib>
-#include <stdio.h>
 
 unsigned int faStr1(const char* str) {
     bool InWord = false;
@@ -13,8 +13,8 @@ unsigned int faStr1(const char* str) {
 
     while (str[i]) {
         if (InWord == false && str[i] != ' ') {
-            int COL = i;//position of machine 
-            int COLWD = i;//position of machine without digits
+            int COL = i;
+            int COLWD = i;
             CountOfWords += 1;
             InWord = true;
             while (str[COL] != ' ' && str[COL] != '\0') {
@@ -53,7 +53,7 @@ unsigned int faStr2(const char* str) {
             InWord = true;
             while (str[COL] != ' ' && str[COL] != '\0' && IsAccepted) {
                 if ('a' <= str[COL] && str[COL] <= 'z') {} else {
-                    IsAccepted=false;
+                    IsAccepted = false;
                 }
                 COL++;
             }
@@ -61,15 +61,14 @@ unsigned int faStr2(const char* str) {
                 COWA++;
                 IsAccepted = false;
             }
-        }
-        else {
+        } else {
             if (InWord == true && str[i] == ' ') {
                 InWord = false;
                 IsAccepted = false;
             }
         }
         i++;
-    } 
+    }
     return COWA;
 }
 
@@ -83,12 +82,12 @@ unsigned int faStr3(const char* str) {
 
     while (str[i]) {
         if (InWord == false && str[i] != ' ') {
-            int COL = i ; //position of machine 
+            int COL = i;
             CountOfWords += 1;
             InWord = true;
             while (str[COL] != ' ' && str[COL] != '\0') {
                 COL++;
-            }  
+            }
             CS += COL - i;
         } else {
             if (InWord == true && str[i] == ' ') {
@@ -97,6 +96,6 @@ unsigned int faStr3(const char* str) {
         }
         i++;
     }
-    answer = round(CS / CountOfWords);  
-    return answer; 
+    answer = round(CS / CountOfWords);
+    return answer;
 }

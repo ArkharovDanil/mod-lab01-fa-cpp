@@ -13,11 +13,11 @@ unsigned int faStr1(const char* str) {
 
     while (str[i]) {
         if (InWord == false && str[i] != ' ') {
-            int COL = i; //position of machine 
-            int COLWD = i; //position of machine without digits
+            int COL = i;//position of machine 
+            int COLWD = i;//position of machine without digits
             CountOfWords += 1;
             InWord = true;
-            while (str[COL] != ' ' && str[COL]!='\0') {
+            while (str[COL] != ' ' && str[COL] != '\0') {
                 if (isalpha(str[COL])) {
                     COLWD += 1;
                 }
@@ -33,7 +33,6 @@ unsigned int faStr1(const char* str) {
         }
         i++;
     }
-    
     return COWWOD;
 }
 
@@ -49,7 +48,7 @@ unsigned int faStr2(const char* str) {
             if ('A' <= str[i] && str[i] <= 'Z') {
                 IsAccepted = true;
             }
-            int COL = i+1; //position of machine after ZAGLAVNAYA
+            int COL = i+1;//position of machine after ZAGLAVNAYA
             CountOfWords += 1;
             InWord = true;
             while (str[COL] != ' ' && str[COL] != '\0' && IsAccepted) {
@@ -70,9 +69,7 @@ unsigned int faStr2(const char* str) {
             }
         }
         i++;
-
-    }
-    
+    } 
     return COWA;
 }
 
@@ -100,7 +97,6 @@ unsigned int faStr3(const char* str) {
         }
         i++;
     }
-    answer = round(CS / CountOfWords);
-   
+    answer = round(CS / CountOfWords);  
     return answer; 
 }

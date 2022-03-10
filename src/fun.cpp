@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 unsigned int faStr1(const char* str) {
-    bool InWord=false;
+    bool InWord = false;
     int CountOfWords = 0;//count of words
     int COWWOD = 0;//count of words without digits
     int i = 0;
@@ -14,7 +14,7 @@ unsigned int faStr1(const char* str) {
     while (str[i]) {
         if (InWord == false && str[i] != ' ') {
             int COL = i; //position of machine 
-            int COLWD=i; //position of machine without digits
+            int COLWD = i; //position of machine without digits
             CountOfWords += 1;
             InWord = true;
             while (str[COL] != ' ' && str[COL]!='\0') {
@@ -23,11 +23,10 @@ unsigned int faStr1(const char* str) {
                 }
                 COL++;
             }
-            if (COL == COLWD){
+            if (COL == COLWD) {
                 COWWOD++;
             }
-        }
-        else {
+        } else {
             if (InWord == true && str[i] == ' ') {
                 InWord = false;
             }
@@ -54,9 +53,7 @@ unsigned int faStr2(const char* str) {
             CountOfWords += 1;
             InWord = true;
             while (str[COL] != ' ' && str[COL] != '\0' && IsAccepted) {
-                if ('a' <= str[COL] && str[COL] <= 'z') {         
-                }
-                else {
+                if ('a' <= str[COL] && str[COL] <= 'z') {} else {
                     IsAccepted=false;
                 }
                 COL++;
@@ -96,8 +93,7 @@ unsigned int faStr3(const char* str) {
                 COL++;
             }  
             CS += COL - i;
-        }
-        else {
+        } else {
             if (InWord == true && str[i] == ' ') {
                 InWord = false;
             }
@@ -105,6 +101,6 @@ unsigned int faStr3(const char* str) {
         i++;
     }
     answer = round(CS / CountOfWords);
-    
+   
     return answer; 
 }
